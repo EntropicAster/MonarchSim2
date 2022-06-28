@@ -23,6 +23,7 @@ public class AARunner
             if(input.nextLine().indexOf("1") == -1){
                 break;
             }
+//testing something, please disregard
         }
     }
 }

@@ -22,6 +22,7 @@ public class Deck {
         //for(int i=1; i<15; i++){
         //    stack.add(new Card(i, "Coins"));
         //}
+	//hand.add(new HangedMan());
         shuffle();
         for(int i=0; i<5; i++){
             draw();
@@ -66,9 +67,13 @@ public class Deck {
     }
     //moves a card from the stack to the hand
     public void draw(){
+	if(stack.size()==0){
+		stack.add(new Card(1, "Emptiness"));
+		System.out.println("You feel hollow");
+	}
 	hand.add(stack.remove(0));
 	if(stack.size()==0){
-		hand.add(new Card(1, "Emptiness"));
+		stack.add(new Card(1, "Emptiness"));
 		System.out.println("You feel hollow");
 	}
     }

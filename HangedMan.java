@@ -12,7 +12,12 @@ public class HangedMan extends MajorArcana{
         System.out.println("");
         ArrayList<Card> holder = new ArrayList<Card>();
         for(int i = 0; i < 5; i++){
-            holder.add(deck.stack.remove(0));
+	    if(deck.stack.size()>0){
+        	holder.add(deck.stack.remove(0));
+	    }
+	    else{
+		holder.add(new Card(1, "Emptiness"));
+	    }
         }
         Deck.cardList(holder);
         System.out.print("Grasp a fate: ");

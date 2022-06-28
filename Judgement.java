@@ -22,7 +22,7 @@ public class Judgement extends MajorArcana{
         deck.cardList(options);
         System.out.print("Grasp a fate: ");
         int num = 10000;
-        while(num > options.size()){
+        while(num > options.size()-1){
             num = in.nextInt() - 1;
             if(num > options.size()){
                 System.out.print("Choose a valid fate");

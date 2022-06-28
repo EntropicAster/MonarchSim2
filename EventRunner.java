@@ -69,13 +69,12 @@ public class EventRunner {
         int diff = val - bar;
         double degree = 0;
         if(diff >= 0){
-	    System.out.println(Math.pow(0.5, diff)/2.0 + "%");
-            degree = Math.pow(0.5, diff/2.0)/2.0;
+            degree = Math.pow(0.5, diff)/2.0;
         }
         else{
-	    System.out.println(1.0 - (Math.pow(0.5, -diff/2.0)/2.0) + "%");
-            degree = 1.0 - (Math.pow(0.5, -diff/2.0)/2.0);
+            degree = 1 - (Math.pow(0.5, -diff)/2.0);
         }
+	System.out.println(degree + "%");
         if(Math.random() > degree){
             return true;
         }
@@ -86,7 +85,7 @@ public class EventRunner {
     public void kingTest(){
         System.out.println("A week passes and it's time to determine the next week's fate");
         Card chosen = select(deck);
-        if(cardTest(9-2*strikes, chosen)){
+        if(cardTest(8-1*strikes, chosen)){
             
             System.out.println("Success\n");
             System.out.println("The week goes well and you prosper");
